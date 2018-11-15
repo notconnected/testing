@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--
+Чтобы не усложнять все настройкой специфического webroot кладу индекс и js в корень.
+-->
+<html>
+    <head>
+        <title>Эмулятор тестирования</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/common.js"></script>
+        <style>
+            #testRes table td, #testRes table th {
+                border: 1px solid #ccc;
+                padding: 5px;
+                margin: 0px;
+            }
+            
+            #testRes table {
+                border-collapse: collapse;
+                margin: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="msg" style="position: fixed; top: 10px; left: 45%; border: 1px solid red; padding: 10px;">...</div>
+        <h1>Настройки</h1>
+        <div class="setingform">
+            <div style="padding: 10px; margin: 10px; width: 500px; border: solid 1px #ccc;">
+                <label>Минимальная сложость: </label><input type="text" name="complexityMin"> Сохранено: <span id="complexityMin"></span><br />
+                <label>Максмальная сложость: </label><input type="text" name="complexityMax"> Сохранено: <span id="complexityMax"></span><br />
+                <input type="button" value="Сохранить" id="saveSettings">
+            </div>
+            <div style="padding: 10px; margin: 10px; width: 500px; border: solid 1px #ccc;">
+                <label>IQ пользователя: </label><input type="text" name="userIQ"> Сохранено: <span id="userIQ"></span><br />
+                <input type="button" value="Сохранить" id="addUser">
+            </div>
+            <div style="padding: 10px; margin: 10px; width: 500px; border: solid 1px #ccc;">
+                <input type="button" value="Запустить тестирование" id="runTest">
+                <div style="float:right;">
+                    <a href="/src/results.php">Результаты тестирования</a>
+                </div>
+                <div id="testRes">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>№</th><th>ID</th><th>Использован</th><th>Сложность</th><th>Ответ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                    <div id="totalres"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

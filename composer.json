@@ -1,0 +1,19 @@
+{
+    "name": "notconnected/testing",
+    "description": "testing",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Dmitry Leonov",
+            "email": "notconnected@yandex.ru"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Notconnected\\Testing\\": "src"
+        }
+    }
+}
